@@ -1,3 +1,65 @@
 Equipo 1;Gana 1;Empata;Gana 2;Equipo 2
-Argentina;X;;;Arabia Saudita
-Polonia;;X;;México
+Qatar;X;;;Ecuador
+England;;X;;Iran
+Senegal;;;X;Netherlands
+USMNT;X;;;Wales
+Argentina;;X;;Saudi Arabia
+Denmark;;;X;Tunisia
+Mexico;X;;;Poland
+France;;X;;Australia
+Morocco;;;X;Croatia
+Germany;X;;;Japan
+Spain;;X;;Costa Rica
+Belgium;;;X;Canada
+Switzerland;X;;;Cameroon
+Uruguay;;X;;South Korea
+Portugal;;;X;Ghana
+Brazil;X;;;Serbia
+Wales;;X;;Iran
+Qatar;;;X;Senegal
+Netherlands;X;;;Ecuador
+England;;X;;USMNT
+Tunisia;;;X;Australia
+Poland;X;;;Saudi Arabia
+France;;X;;Denmark
+Argentina;;;X;Mexico
+Japan;X;;;Costa Rica
+Belgium;;X;;Morocco
+Croatia;;;X;Canada
+Spain;X;;;Germany
+Cameroon;;X;;Serbia
+South Korea;;;X;Ghana
+Brazil;X;;;Switzerland
+Portugal;;X;;Uruguay
+Ecuador;;;X;Senegal
+Netherlands;X;;;Qatar
+Wales;;X;;England
+Iran;;;X;USMNT
+Australia;X;;;Denmark
+Tunisia;;X;;France
+Saudi Arabia;;;X;Mexico
+Poland;X;;;Argentina
+Croatia;;X;;Belgium
+Canada;;;X;Morocco
+Japan;X;;;Spain
+Costa Rica;;X;;Germany
+Ghana;;;X;Uruguay
+South Korea;X;;;Portugal
+Cameroon;;X;;Brazil
+Serbia;;;X;Switzerland
+Netherlands;X;;;USMNT
+Argentina;;X;;Australia
+France;;;X;Poland
+England;X;;;Senegal
+Japan;;X;;Croatia
+Brazil;;;X;South Korea
+Morocco;X;;;Spain
+Portugal;;X;;Switzerland
+Croatia;;;X;Brazil
+Netherlands;X;;;Argentina
+Morocco;;X;;Portugal
+England;;;X;France
+Argentina;X;;;Croatia
+France;;X;;Morocco
+Croatia;;;X;Morocco
+Argentina;X;;;France
