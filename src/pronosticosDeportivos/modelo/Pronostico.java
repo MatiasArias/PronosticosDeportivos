@@ -6,9 +6,13 @@ public class Pronostico {
 	private ResultadoEnum resultado;
 	
 	public int puntos() {
+		if(partido.resultado(equipo)==resultado) {
+			return 1;
+		}
 		return 0;
 	}
-
+	public Pronostico() {}
+	
 	public Pronostico(Partido partido, Equipo equipo, ResultadoEnum resultado) {
 		this.partido = partido;
 		this.equipo = equipo;

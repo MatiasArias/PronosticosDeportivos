@@ -3,11 +3,14 @@ package pronosticosDeportivos.modelo;
 public class Ronda {
 	private String nro;
 	private Partido[] partidos;
+	private int cantidadPartidos;
 	
 	public int puntos() {
-		return 0;
+		return partidos.length;
 	}
-
+	public Ronda() {
+		
+	}
 	public Ronda(String nro, Partido[] partidos) {
 		super();
 		this.nro = nro;
@@ -28,6 +31,12 @@ public class Ronda {
 
 	public void setPartidos(Partido[] partidos) {
 		this.partidos = partidos;
+	}
+	public int getCantidadPartidos() {
+		return cantidadPartidos;
+	}
+	public void setCantidadPartidos(int cantidadPartidos) {
+		this.cantidadPartidos = cantidadPartidos;
 	}
 	
 }
