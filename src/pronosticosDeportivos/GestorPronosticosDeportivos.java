@@ -22,8 +22,8 @@ public class GestorPronosticosDeportivos {
 	}
 	
 	public GestorPronosticosDeportivos() {
-		this.ronda = cargarRonda("C:\\Users\\matya\\OneDrive\\Escritorio\\WORK\\Argentina Programa\\PronosticosDeportivos\\src\\pronosticosDeportivos\\archivos\\resultados.csv");
-		this.pronosticos = cargarPronosticos("C:\\Users\\matya\\OneDrive\\Escritorio\\WORK\\Argentina Programa\\PronosticosDeportivos\\src\\pronosticosDeportivos\\archivos\\pronostico.csv",ronda);
+		this.ronda = cargarRonda("src//pronosticosDeportivos//archivos//");
+		this.pronosticos = cargarPronosticos("src//pronosticosDeportivos//archivos//",ronda);
 		System.out.println("Total de puntos: " + contarPuntos(pronosticos));
 	}
 
@@ -31,7 +31,7 @@ public class GestorPronosticosDeportivos {
 		Ronda ronda = new Ronda();
 		List<String> resultados = new ArrayList<String>();
 		try {
-			 resultados = Files.readAllLines(Paths.get(path),StandardCharsets.ISO_8859_1);
+			 resultados = Files.readAllLines(Paths.get(path,"resultados.csv"),StandardCharsets.ISO_8859_1);
 			 resultados.remove(0);
 		} catch (IOException e) {
 			System.out.println("Error al leer el archivo");
@@ -62,7 +62,7 @@ public class GestorPronosticosDeportivos {
 		List<String> pronosticos = new ArrayList<String>();
 		Pronostico[] pronosticosRonda = new Pronostico[ronda.getCantidadPartidos()];
 		try {
-			 pronosticos = Files.readAllLines(Paths.get(path),StandardCharsets.ISO_8859_1);
+			 pronosticos = Files.readAllLines(Paths.get(path,"pronostico.csv"),StandardCharsets.ISO_8859_1);
 			 pronosticos.remove(0);
 		} catch (IOException e) {
 			System.out.println("Error al leer el archivo");
