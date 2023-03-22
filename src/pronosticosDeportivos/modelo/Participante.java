@@ -32,5 +32,13 @@ public class Participante {
 	public void setPronosticos(Pronostico[] pronosticos) {
 		this.pronosticos = pronosticos;
 	}
+	
+	public int getPuntaje() {
+		int totalPuntos=0;
+		for(Pronostico pronostico : pronosticos){
+			totalPuntos+=pronostico.puntos();
+		}
+		return totalPuntos;
+	}
 
 }
