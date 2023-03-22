@@ -1,7 +1,7 @@
 package pronosticosDeportivos.modelo;
 
 public class Ronda {
-	private String nro;
+	private String nombre;
 	private Partido[] partidos;
 	
 	public int puntos() {
@@ -10,20 +10,17 @@ public class Ronda {
 	public Ronda() {
 		
 	}
-	public Ronda(String nro, Partido[] partidos) {
+	public Ronda(String nombre, Partido[] partidos) {
 		super();
-		this.nro = nro;
+		this.nombre = nombre;
 		this.partidos = partidos;
 	}
-
-	public String getNro() {
-		return nro;
+	public String getNombre() {
+		return nombre;
 	}
-
-	public void setNro(String nro) {
-		this.nro = nro;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-
 	public Partido[] getPartidos() {
 		return partidos;
 	}

@@ -14,7 +14,7 @@ import pronosticosDeportivos.modelo.Pronostico;
 import pronosticosDeportivos.modelo.ResultadoEnum;
 
 public class GestorPronosticosDeportivos {
-	private Ronda ronda;
+	private Ronda[] rondas;
 	private Pronostico[] pronosticos;
 	private String path = "src//pronosticosDeportivos//archivos//";
 
@@ -23,61 +23,82 @@ public class GestorPronosticosDeportivos {
 	}
 
 	public GestorPronosticosDeportivos() {
-		this.ronda = cargarRonda();
-		this.pronosticos = cargarPronosticos(ronda);
+		this.rondas = cargarRonda();
+		this.pronosticos = cargarPronosticos(rondas);
 		mostrarPartidos();
-		System.out.println("Total de puntos: " + contarPuntos(pronosticos));
+		// System.out.println("Total de puntos: " + contarPuntos(pronosticos));
 	}
 
-	public Ronda cargarRonda() {
-		Ronda ronda = new Ronda();
+	public Ronda[] cargarRonda() {
 		List<String> resultados = leerArchivo("resultados.csv");
-		Partido[] partidosRonda = new Partido[resultados.size()];
-		
+		int cantidadRondas = (int) resultados.stream().map(s -> s.split(";")[0]).distinct().count();
+		Ronda[] rondas = new Ronda[cantidadRondas];
+
 		int i = 0;
+		int j = 0;
+		List<Partido> partidosRondaList = new ArrayList<Partido>();
+		String nombreRonda = "";
 		for (String resultado : resultados) {
 			String[] vectorResultado = resultado.split(";");
-			
+			if (nombreRonda.isEmpty()) {
+				nombreRonda = vectorResultado[0];
+			}
+			if (!vectorResultado[0].equals(nombreRonda) && !nombreRonda.isEmpty()) {
+				Ronda ronda = new Ronda();
+				Partido[] partidos = new Partido[partidosRondaList.size()];
+				ronda.setNombre(nombreRonda);
+				ronda.setPartidos(partidosRondaList.toArray(partidos));
+				rondas[j] = ronda;
+				partidosRondaList.clear();
+				nombreRonda = vectorResultado[0];
+				j++;
+			}
 			Equipo equipo1 = new Equipo();
-			equipo1.setNombre(vectorResultado[0]);
+			equipo1.setNombre(vectorResultado[1]);
 			Equipo equipo2 = new Equipo();
-			equipo2.setNombre(vectorResultado[3]);
-			
+			equipo2.setNombre(vectorResultado[4]);
 			Partido partido = new Partido();
 			partido.setEquipo1(equipo1);
 			partido.setEquipo2(equipo2);
-			partido.setGolesEquipo1(vectorResultado[1]);
-			partido.setGolesEquipo2(vectorResultado[2]);
-			partidosRonda[i] = partido;
+			partido.setGolesEquipo1(vectorResultado[2]);
+			partido.setGolesEquipo2(vectorResultado[3]);
+			partidosRondaList.add(partido);
 			i++;
 		}
-		ronda.setPartidos(partidosRonda);
-		return ronda;
+		Ronda ronda = new Ronda();
+		Partido[] partidos = new Partido[partidosRondaList.size()];
+		ronda.setNombre(nombreRonda);
+		ronda.setPartidos(partidosRondaList.toArray(partidos));
+		rondas[j] = ronda;
+
+		return rondas;
 	}
 
-	public Pronostico[] cargarPronosticos(Ronda ronda) {
+	public Pronostico[] cargarPronosticos(Ronda[] rondas) {
 		List<String> pronosticos = leerArchivo("pronostico.csv");
-		Pronostico[] pronosticosRonda = new Pronostico[ronda.getCantidadPartidos()];
-		Partido[] partidosRonda = ronda.getPartidos();
-
-		for (int i = 0; i < ronda.getCantidadPartidos(); i++) {
-			Pronostico pronostico = new Pronostico();
-			ResultadoEnum resultadoPronostico;
-			if (pronosticos.get(i).split(";")[1].isEmpty()) {
-				if (pronosticos.get(i).split(";")[3].isEmpty()) {
-					resultadoPronostico = ResultadoEnum.EMPATE;
+		List<Pronostico> pronosticosRonda = new ArrayList<Pronostico>();
+		for (Ronda ronda : rondas) {
+			Partido[] partidosRonda = ronda.getPartidos();
+			for (int i = 0; i < ronda.getCantidadPartidos(); i++) {
+				Pronostico pronostico = new Pronostico();
+				ResultadoEnum resultadoPronostico;
+				if (pronosticos.get(i).split(";")[1].isEmpty()) {
+					if (pronosticos.get(i).split(";")[3].isEmpty()) {
+						resultadoPronostico = ResultadoEnum.EMPATE;
+					} else {
+						resultadoPronostico = ResultadoEnum.PERDEDOR;
+					}
 				} else {
-					resultadoPronostico = ResultadoEnum.PERDEDOR;
+					resultadoPronostico = ResultadoEnum.GANADOR;
 				}
-			} else {
-				resultadoPronostico = ResultadoEnum.GANADOR;
+				pronostico.setPartido(partidosRonda[i]);
+				pronostico.setEquipo(partidosRonda[i].getEquipo1());
+				pronostico.setResultado(resultadoPronostico);
+				pronosticosRonda.add(pronostico);
 			}
-			pronostico.setPartido(partidosRonda[i]);
-			pronostico.setEquipo(partidosRonda[i].getEquipo1());
-			pronostico.setResultado(resultadoPronostico);
-			pronosticosRonda[i] = pronostico;
 		}
-		return pronosticosRonda;
+		Pronostico[] pronosticosArray = new Pronostico[pronosticosRonda.size()];
+		return pronosticosRonda.toArray(pronosticosArray);
 	}
 
 	public int contarPuntos(Pronostico[] pronosticos) {
@@ -101,13 +122,16 @@ public class GestorPronosticosDeportivos {
 	}
 
 	public void mostrarPartidos() {
-		for (int i = 0; i < ronda.getCantidadPartidos(); i++) {
-			Partido partidoPronostico = ronda.getPartidos()[i];
-			Equipo equipoPronostico = partidoPronostico.getEquipo1();
-			System.out.println(
-					"Partido: " + equipoPronostico.getNombre() + " - " + partidoPronostico.getEquipo2().getNombre()
-							+ " | Resultado: " + partidoPronostico.resultado(equipoPronostico) + " - Pronostico: "
-							+ pronosticos[i].getResultado());
+		for (Ronda ronda : rondas) {
+			System.out.println("\n\nRonda: "+ronda.getNombre()+"\n");
+			for (int i = 0; i < ronda.getCantidadPartidos(); i++) {
+				Partido partidoPronostico = ronda.getPartidos()[i];
+				Equipo equipoPronostico = partidoPronostico.getEquipo1();
+				System.out.println(
+						"Partido: " + equipoPronostico.getNombre() + " - " + partidoPronostico.getEquipo2().getNombre()
+								+ " | Resultado: " + partidoPronostico.resultado(equipoPronostico) + " - Pronostico: "
+								+ pronosticos[i].getResultado());
+			}
 		}
 	}
 }
