@@ -29,16 +29,18 @@ class GestorPronosticosDeportivosTest {
 		Partido partido1Ronda2 = new Partido(argentina,mexico,2,0);
 		Partido partido2Ronda2 = new Partido(arabiaSaudita,polonia,0,2);
 		Partido[] vectorPartidosRonda2 = {partido1Ronda2,partido2Ronda2};
-		Ronda ronda2 = new Ronda("2", vectorPartidosRonda1) ;
+		Ronda ronda2 = new Ronda("2", vectorPartidosRonda2) ;
 		//Participante
 		Participante participante = new Participante();
-		Pronostico pronostico1 = new Pronostico(partido1Ronda1,argentina,ResultadoEnum.GANADOR);
+		Pronostico pronostico1 = new Pronostico(partido1Ronda1,argentina,ResultadoEnum.PERDEDOR);
 		Pronostico pronostico2 = new Pronostico(partido2Ronda1,polonia,ResultadoEnum.EMPATE);
 		Pronostico pronostico3 = new Pronostico(partido1Ronda2,argentina,ResultadoEnum.GANADOR);
-		Pronostico pronostico4 = new Pronostico(partido2Ronda2,arabiaSaudita,ResultadoEnum.GANADOR);
+		Pronostico pronostico4 = new Pronostico(partido2Ronda2,arabiaSaudita,ResultadoEnum.PERDEDOR);
 		Pronostico[] pronostico = {pronostico1,pronostico2,pronostico3,pronostico4};
 		participante.setPronosticos(pronostico);
-		assertEquals(2, participante.getPuntaje());
+		assertEquals(2,ronda1.puntos());
+		assertEquals(2,ronda2.puntos());
+		assertEquals(4, participante.getPuntaje());
 	}
 
 }
