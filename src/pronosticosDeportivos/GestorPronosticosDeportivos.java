@@ -40,7 +40,7 @@ public class GestorPronosticosDeportivos {
 		int cantidadRondas = (int) resultados.stream().map(s -> s.split(";")[0]).distinct().count();
 		Ronda[] rondas = new Ronda[cantidadRondas];
 
-		int i = 0;
+		
 		int j = 0;
 		List<Partido> partidosRondaList = new ArrayList<Partido>();
 		String nombreRonda = "";
@@ -70,7 +70,6 @@ public class GestorPronosticosDeportivos {
 				partido.setGolesEquipo1(vectorResultado[2]);
 				partido.setGolesEquipo2(vectorResultado[3]);
 				partidosRondaList.add(partido);
-				i++;
 			}
 		}
 		Ronda ronda = new Ronda();
