@@ -1,65 +1,130 @@
-Equipo 1;Gana 1;Empata;Gana 2;Equipo 2
-Qatar;X;;;Ecuador
-England;;X;;Iran
-Senegal;;;X;Netherlands
-USMNT;X;;;Wales
-Argentina;;X;;Saudi Arabia
-Denmark;;;X;Tunisia
-Mexico;X;;;Poland
-France;;X;;Australia
-Morocco;;;X;Croatia
-Germany;X;;;Japan
-Spain;;X;;Costa Rica
-Belgium;;;X;Canada
-Switzerland;X;;;Cameroon
-Uruguay;;X;;South Korea
-Portugal;;;X;Ghana
-Brazil;X;;;Serbia
-Wales;;X;;Iran
-Qatar;;;X;Senegal
-Netherlands;X;;;Ecuador
-England;;X;;USMNT
-Tunisia;;;X;Australia
-Poland;X;;;Saudi Arabia
-France;;X;;Denmark
-Argentina;;;X;Mexico
-Japan;X;;;Costa Rica
-Belgium;;X;;Morocco
-Croatia;;;X;Canada
-Spain;X;;;Germany
-Cameroon;;X;;Serbia
-South Korea;;;X;Ghana
-Brazil;X;;;Switzerland
-Portugal;;X;;Uruguay
-Ecuador;;;X;Senegal
-Netherlands;X;;;Qatar
-Wales;;X;;England
-Iran;;;X;USMNT
-Australia;X;;;Denmark
-Tunisia;;X;;France
-Saudi Arabia;;;X;Mexico
-Poland;X;;;Argentina
-Croatia;;X;;Belgium
-Canada;;;X;Morocco
-Japan;X;;;Spain
-Costa Rica;;X;;Germany
-Ghana;;;X;Uruguay
-South Korea;X;;;Portugal
-Cameroon;;X;;Brazil
-Serbia;;;X;Switzerland
-Netherlands;X;;;USMNT
-Argentina;;X;;Australia
-France;;;X;Poland
-England;X;;;Senegal
-Japan;;X;;Croatia
-Brazil;;;X;South Korea
-Morocco;X;;;Spain
-Portugal;;X;;Switzerland
-Croatia;;;X;Brazil
-Netherlands;X;;;Argentina
-Morocco;;X;;Portugal
-England;;;X;France
-Argentina;X;;;Croatia
-France;;X;;Morocco
-Croatia;;;X;Morocco
-Argentina;X;;;France
+Participante;Equipo 1;Gana 1;Empata;Gana 2;Equipo 2
+Matias;Qatar;X;;;Ecuador
+Matias;England;;X;;Iran
+Matias;Senegal;;;X;Netherlands
+Matias;USMNT;X;;;Wales
+Matias;Argentina;;X;;Saudi Arabia
+Matias;Denmark;;;X;Tunisia
+Matias;Mexico;X;;;Poland
+Matias;France;;X;;Australia
+Matias;Morocco;;;X;Croatia
+Matias;Germany;X;;;Japan
+Matias;Spain;;X;;Costa Rica
+Matias;Belgium;;;X;Canada
+Matias;Switzerland;X;;;Cameroon
+Matias;Uruguay;;X;;South Korea
+Matias;Portugal;;;X;Ghana
+Matias;Brazil;X;;;Serbia
+Matias;Wales;;X;;Iran
+Matias;Qatar;;;X;Senegal
+Matias;Netherlands;X;;;Ecuador
+Matias;England;;X;;USMNT
+Matias;Tunisia;;;X;Australia
+Matias;Poland;X;;;Saudi Arabia
+Matias;France;;X;;Denmark
+Matias;Argentina;;;X;Mexico
+Matias;Japan;X;;;Costa Rica
+Matias;Belgium;;X;;Morocco
+Matias;Croatia;;;X;Canada
+Matias;Spain;X;;;Germany
+Matias;Cameroon;;X;;Serbia
+Matias;South Korea;;;X;Ghana
+Matias;Brazil;X;;;Switzerland
+Matias;Portugal;;X;;Uruguay
+Matias;Ecuador;;;X;Senegal
+Matias;Netherlands;X;;;Qatar
+Matias;Wales;;X;;England
+Matias;Iran;;;X;USMNT
+Matias;Australia;X;;;Denmark
+Matias;Tunisia;;X;;France
+Matias;Saudi Arabia;;;X;Mexico
+Matias;Poland;X;;;Argentina
+Matias;Croatia;;X;;Belgium
+Matias;Canada;;;X;Morocco
+Matias;Japan;X;;;Spain
+Matias;Costa Rica;;X;;Germany
+Matias;Ghana;;;X;Uruguay
+Matias;South Korea;X;;;Portugal
+Matias;Cameroon;;X;;Brazil
+Matias;Serbia;;;X;Switzerland
+Ezequiel;Qatar;;;X;Ecuador
+Ezequiel;England;X;;;Iran
+Ezequiel;Senegal;;;X;Netherlands
+Ezequiel;USMNT;;X;;Wales
+Ezequiel;Argentina;;;X;Saudi Arabia
+Ezequiel;Denmark;;X;;Tunisia
+Ezequiel;Mexico;;X;;Poland
+Ezequiel;France;X;;;Australia
+Ezequiel;Morocco;;X;;Croatia
+Ezequiel;Germany;;;X;Japan
+Ezequiel;Spain;X;;;Costa Rica
+Ezequiel;Belgium;X;;;Canada
+Ezequiel;Switzerland;X;;;Cameroon
+Ezequiel;Uruguay;;X;;South Korea
+Ezequiel;Portugal;X;;;Ghana
+Ezequiel;Brazil;X;;;Serbia
+Ezequiel;Wales;;;X;Iran
+Ezequiel;Qatar;;;X;Senegal
+Ezequiel;Netherlands;;X;;Ecuador
+Ezequiel;England;;X;;USMNT
+Ezequiel;Tunisia;;;X;Australia
+Ezequiel;Poland;X;;;Saudi Arabia
+Ezequiel;France;X;;;Denmark
+Ezequiel;Argentina;X;;;Mexico
+Ezequiel;Japan;;;X;Costa Rica
+Ezequiel;Belgium;;;X;Morocco
+Ezequiel;Croatia;X;;;Canada
+Ezequiel;Spain;;X;;Germany
+Ezequiel;Cameroon;;X;;Serbia
+Ezequiel;South Korea;;;X;Ghana
+Ezequiel;Brazil;X;;;Switzerland
+Ezequiel;Portugal;X;;;Uruguay
+Ezequiel;Ecuador;;;X;Senegal
+Ezequiel;Netherlands;X;;;Qatar
+Ezequiel;Wales;;;X;England
+Ezequiel;Iran;;;X;USMNT
+Ezequiel;Australia;X;;;Denmark
+Ezequiel;Tunisia;X;;;France
+Ezequiel;Saudi Arabia;;;X;Mexico
+Ezequiel;Poland;;;X;Argentina
+Ezequiel;Croatia;;X;;Belgium
+Ezequiel;Canada;;;X;Morocco
+Ezequiel;Japan;X;;;Spain
+Ezequiel;Costa Rica;;;X;Germany
+Ezequiel;Ghana;;;X;Uruguay
+Ezequiel;South Korea;X;;;Portugal
+Ezequiel;Cameroon;X;;;Brazil
+Ezequiel;Serbia;;;X;Switzerland
+Matias;Netherlands;X;;;USMNT
+Matias;Argentina;;X;;Australia
+Matias;France;;;X;Poland
+Matias;England;X;;;Senegal
+Matias;Japan;;X;;Croatia
+Matias;Brazil;;;X;South Korea
+Matias;Morocco;X;;;Spain
+Matias;Portugal;;X;;Switzerland
+Ezequiel;Netherlands;X;;;USMNT
+Ezequiel;Argentina;X;;;Australia
+Ezequiel;France;X;;;Poland
+Ezequiel;England;X;;;Senegal
+Ezequiel;Japan;;X;;Croatia
+Ezequiel;Brazil;X;;;South Korea
+Ezequiel;Morocco;;X;;Spain
+Ezequiel;Portugal;X;;;Switzerland
+Matias;Croatia;;;X;Brazil
+Matias;Netherlands;X;;;Argentina
+Matias;Morocco;;X;;Portugal
+Matias;England;;;X;France
+Ezequiel;Croatia;;X;;Brazil
+Ezequiel;Netherlands;;X;;Argentina
+Ezequiel;Morocco;X;;;Portugal
+Ezequiel;England;;;X;France
+Matias;Argentina;X;;;Croatia
+Matias;France;;X;;Morocco
+Ezequiel;Argentina;X;;;Croatia
+Ezequiel;France;X;;;Morocco
+Matias;Croatia;;;X;Morocco
+Matias;Argentina;X;;;France
+Ezequiel;Croatia;X;;;Morocco
+Ezequiel;Argentina;;X;;France
+;;;;;

@@ -1,65 +1,65 @@
-Equipo 1;Cant. Goles 1;Cant. Goles 2;Equipo 2
-Qatar;0;2;Ecuador
-England;6;2;Iran
-Senegal;0;2;Netherlands
-USMNT;1;1;Wales
-Argentina;1;2;Saudi Arabia
-Denmark;0;0;Tunisia
-Mexico;0;0;Poland
-France;4;1;Australia
-Morocco;0;0;Croatia
-Germany;1;2;Japan
-Spain;7;0;Costa Rica
-Belgium;1;0;Canada
-Switzerland;1;0;Cameroon
-Uruguay;0;0;South Korea
-Portugal;3;2;Ghana
-Brazil;2;0;Serbia
-Wales;0;2;Iran
-Qatar;1;3;Senegal
-Netherlands;1;1;Ecuador
-England;0;0;USMNT
-Tunisia;0;1;Australia
-Poland;2;0;Saudi Arabia
-France;2;1;Denmark
-Argentina;2;0;Mexico
-Japan;0;1;Costa Rica
-Belgium;0;2;Morocco
-Croatia;4;1;Canada
-Spain;1;1;Germany
-Cameroon;3;3;Serbia
-South Korea;2;3;Ghana
-Brazil;1;0;Switzerland
-Portugal;2;0;Uruguay
-Ecuador;1;2;Senegal
-Netherlands;2;0;Qatar
-Wales;0;3;England
-Iran;0;1;USMNT
-Australia;1;0;Denmark
-Tunisia;1;0;France
-Saudi Arabia;1;2;Mexico
-Poland;0;2;Argentina
-Croatia;0;0;Belgium
-Canada;1;2;Morocco
-Japan;2;1;Spain
-Costa Rica;2;4;Germany
-Ghana;0;2;Uruguay
-South Korea;2;1;Portugal
-Cameroon;1;0;Brazil
-Serbia;2;3;Switzerland
-Netherlands;3;1;USMNT
-Argentina;2;1;Australia
-France;3;1;Poland
-England;3;0;Senegal
-Japan;1;1;Croatia
-Brazil;4;1;South Korea
-Morocco;0;0;Spain
-Portugal;6;1;Switzerland
-Croatia;1;1;Brazil
-Netherlands;2;2;Argentina
-Morocco;1;0;Portugal
-England;1;2;France
-Argentina;3;0;Croatia
-France;2;0;Morocco
-Croatia;2;1;Morocco
-Argentina;3;3;France
+Ronda;Equipo 1;Cant. Goles 1;Cant. Goles 2;Equipo 2
+Fase de Grupos;Qatar;0;2;Ecuador
+Fase de Grupos;England;6;2;Iran
+Fase de Grupos;Senegal;0;2;Netherlands
+Fase de Grupos;USMNT;1;1;Wales
+Fase de Grupos;Argentina;1;2;Saudi Arabia
+Fase de Grupos;Denmark;0;0;Tunisia
+Fase de Grupos;Mexico;0;0;Poland
+Fase de Grupos;France;4;1;Australia
+Fase de Grupos;Morocco;0;0;Croatia
+Fase de Grupos;Germany;1;2;Japan
+Fase de Grupos;Spain;7;0;Costa Rica
+Fase de Grupos;Belgium;1;0;Canada
+Fase de Grupos;Switzerland;1;0;Cameroon
+Fase de Grupos;Uruguay;0;0;South Korea
+Fase de Grupos;Portugal;3;2;Ghana
+Fase de Grupos;Brazil;2;0;Serbia
+Fase de Grupos;Wales;0;2;Iran
+Fase de Grupos;Qatar;1;3;Senegal
+Fase de Grupos;Netherlands;1;1;Ecuador
+Fase de Grupos;England;0;0;USMNT
+Fase de Grupos;Tunisia;0;1;Australia
+Fase de Grupos;Poland;2;0;Saudi Arabia
+Fase de Grupos;France;2;1;Denmark
+Fase de Grupos;Argentina;2;0;Mexico
+Fase de Grupos;Japan;0;1;Costa Rica
+Fase de Grupos;Belgium;0;2;Morocco
+Fase de Grupos;Croatia;4;1;Canada
+Fase de Grupos;Spain;1;1;Germany
+Fase de Grupos;Cameroon;3;3;Serbia
+Fase de Grupos;South Korea;2;3;Ghana
+Fase de Grupos;Brazil;1;0;Switzerland
+Fase de Grupos;Portugal;2;0;Uruguay
+Fase de Grupos;Ecuador;1;2;Senegal
+Fase de Grupos;Netherlands;2;0;Qatar
+Fase de Grupos;Wales;0;3;England
+Fase de Grupos;Iran;0;1;USMNT
+Fase de Grupos;Australia;1;0;Denmark
+Fase de Grupos;Tunisia;1;0;France
+Fase de Grupos;Saudi Arabia;1;2;Mexico
+Fase de Grupos;Poland;0;2;Argentina
+Fase de Grupos;Croatia;0;0;Belgium
+Fase de Grupos;Canada;1;2;Morocco
+Fase de Grupos;Japan;2;1;Spain
+Fase de Grupos;Costa Rica;2;4;Germany
+Fase de Grupos;Ghana;0;2;Uruguay
+Fase de Grupos;South Korea;2;1;Portugal
+Fase de Grupos;Cameroon;1;0;Brazil
+Fase de Grupos;Serbia;2;3;Switzerland
+Octavos de Final;Netherlands;3;1;USMNT
+Octavos de Final;Argentina;2;1;Australia
+Octavos de Final;France;3;1;Poland
+Octavos de Final;England;3;0;Senegal
+Octavos de Final;Japan;1;1;Croatia
+Octavos de Final;Brazil;4;1;South Korea
+Octavos de Final;Morocco;0;0;Spain
+Octavos de Final;Portugal;6;1;Switzerland
+Cuartos de Final;Croatia;1;1;Brazil
+Cuartos de Final;Netherlands;2;2;Argentina
+Cuartos de Final;Morocco;1;0;Portugal
+Cuartos de Final;England;1;2;France
+Semifinal;Argentina;3;0;Croatia
+Semifinal;France;2;0;Morocco
+Finales;Croatia;2;1;Morocco
+Finales;Argentina;3;3;France
