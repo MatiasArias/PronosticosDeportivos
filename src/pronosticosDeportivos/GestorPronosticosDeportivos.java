@@ -106,7 +106,6 @@ public class GestorPronosticosDeportivos {
 						pronostico.setEquipo(partido.getEquipo1());
 						pronostico.setResultado(resultadoPronostico);
 						pronosticosRonda.add(pronostico);
-						
 					}
 					i++;
 				}
@@ -116,18 +115,18 @@ public class GestorPronosticosDeportivos {
 		return pronosticosRonda.toArray(pronosticosArray);
 	}
 
-	public int[] contarPuntos() {
-		int[] totalPuntos = new int[participantes.length];
-		int numeroParticipante = 0;
+	public void asignarPronosticosParticipantes() {
+		List<Pronostico> pronosticosParticipantes = new ArrayList<Pronostico>();
 		for (Participante participante : participantes) {
 			for (Pronostico pronostico : pronosticos) {
 				if (pronostico.getParticipante().equals(participante)) {
-					totalPuntos[numeroParticipante] += pronostico.puntos();
+					pronosticosParticipantes.add(pronostico);
 				}
 			}
-			numeroParticipante++;
+			Pronostico[] pronosticosParticipante = new Pronostico[pronosticosParticipantes.size()];
+			participante.setPronosticos(pronosticosParticipantes.toArray(pronosticosParticipante));
+			pronosticosParticipantes.clear();
 		}
-		return totalPuntos;
 	}
 
 	public boolean validarArchivoResultado(String linea) {
@@ -181,8 +180,9 @@ public class GestorPronosticosDeportivos {
 			}
 		}
 		System.out.println("\nResultados pronsoticos: \n");
-		for (int j = 0; j < participantes.length; j++) {
-			System.out.println("Participante " + participantes[j].getNombre() + ": " + contarPuntos()[j]);
+		asignarPronosticosParticipantes();
+		for (Participante participante : participantes) {
+			System.out.println("Participante " + participante.getNombre() + ": " + participante.getPuntaje());
 		}
 	}
 
