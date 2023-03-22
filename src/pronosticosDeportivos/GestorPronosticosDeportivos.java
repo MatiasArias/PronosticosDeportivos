@@ -9,6 +9,7 @@ import java.util.List;
 
 import pronosticosDeportivos.modelo.Ronda;
 import pronosticosDeportivos.modelo.Equipo;
+import pronosticosDeportivos.modelo.Participante;
 import pronosticosDeportivos.modelo.Partido;
 import pronosticosDeportivos.modelo.Pronostico;
 import pronosticosDeportivos.modelo.ResultadoEnum;
@@ -16,6 +17,7 @@ import pronosticosDeportivos.modelo.ResultadoEnum;
 public class GestorPronosticosDeportivos {
 	private Ronda[] rondas;
 	private Pronostico[] pronosticos;
+	private Participante[] participantes;
 	private String path = "src//pronosticosDeportivos//archivos//";
 
 	public static void main(String[] args) {
@@ -23,10 +25,14 @@ public class GestorPronosticosDeportivos {
 	}
 
 	public GestorPronosticosDeportivos() {
+		participantes = new Participante[2];
+
+		participantes[0] = new Participante("Matias");
+		participantes[1] = new Participante("Ezequiel");
+
 		this.rondas = cargarRonda();
 		this.pronosticos = cargarPronosticos(rondas);
 		mostrarPartidos();
-		// System.out.println("Total de puntos: " + contarPuntos(pronosticos));
 	}
 
 	public Ronda[] cargarRonda() {
@@ -77,34 +83,45 @@ public class GestorPronosticosDeportivos {
 	public Pronostico[] cargarPronosticos(Ronda[] rondas) {
 		List<String> pronosticos = leerArchivo("pronostico.csv");
 		List<Pronostico> pronosticosRonda = new ArrayList<Pronostico>();
+		int i=0;
 		for (Ronda ronda : rondas) {
-			Partido[] partidosRonda = ronda.getPartidos();
-			for (int i = 0; i < ronda.getCantidadPartidos(); i++) {
-				Pronostico pronostico = new Pronostico();
-				ResultadoEnum resultadoPronostico;
-				if (pronosticos.get(i).split(";")[1].isEmpty()) {
-					if (pronosticos.get(i).split(";")[3].isEmpty()) {
-						resultadoPronostico = ResultadoEnum.EMPATE;
+			for (Participante participante : participantes) {
+				Partido[] partidosRonda = ronda.getPartidos();
+				for (Partido partido:partidosRonda) {
+					Pronostico pronostico = new Pronostico();
+					ResultadoEnum resultadoPronostico;
+					if (pronosticos.get(i).split(";")[2].isEmpty()) {
+						if (pronosticos.get(i).split(";")[4].isEmpty()) {
+							resultadoPronostico = ResultadoEnum.EMPATE;
+						} else {
+							resultadoPronostico = ResultadoEnum.PERDEDOR;
+						}
 					} else {
-						resultadoPronostico = ResultadoEnum.PERDEDOR;
+						resultadoPronostico = ResultadoEnum.GANADOR;
 					}
-				} else {
-					resultadoPronostico = ResultadoEnum.GANADOR;
+					pronostico.setParticipante(participante);
+					pronostico.setPartido(partido);
+					pronostico.setEquipo(partido.getEquipo1());
+					pronostico.setResultado(resultadoPronostico);
+					pronosticosRonda.add(pronostico);
+					i++;
 				}
-				pronostico.setPartido(partidosRonda[i]);
-				pronostico.setEquipo(partidosRonda[i].getEquipo1());
-				pronostico.setResultado(resultadoPronostico);
-				pronosticosRonda.add(pronostico);
 			}
 		}
 		Pronostico[] pronosticosArray = new Pronostico[pronosticosRonda.size()];
 		return pronosticosRonda.toArray(pronosticosArray);
 	}
 
-	public int contarPuntos(Pronostico[] pronosticos) {
-		int totalPuntos = 0;
-		for (Pronostico pronostico : pronosticos) {
-			totalPuntos += pronostico.puntos();
+	public int[] contarPuntos() {
+		int[] totalPuntos = new int[participantes.length];
+		int numeroParticipante = 0;
+		for (Participante participante : participantes) {
+			for (Pronostico pronostico : pronosticos) {
+				if (pronostico.getParticipante().equals(participante)) {
+					totalPuntos[numeroParticipante] += pronostico.puntos();
+				}
+			}
+			numeroParticipante++;
 		}
 		return totalPuntos;
 	}
@@ -122,16 +139,29 @@ public class GestorPronosticosDeportivos {
 	}
 
 	public void mostrarPartidos() {
+		System.out.println("Resultados:");
+
 		for (Ronda ronda : rondas) {
-			System.out.println("\n\nRonda: "+ronda.getNombre()+"\n");
+			System.out.println("\n\nRonda: " + ronda.getNombre() + "\n");
 			for (int i = 0; i < ronda.getCantidadPartidos(); i++) {
 				Partido partidoPronostico = ronda.getPartidos()[i];
 				Equipo equipoPronostico = partidoPronostico.getEquipo1();
-				System.out.println(
-						"Partido: " + equipoPronostico.getNombre() + " - " + partidoPronostico.getEquipo2().getNombre()
-								+ " | Resultado: " + partidoPronostico.resultado(equipoPronostico) + " - Pronostico: "
-								+ pronosticos[i].getResultado());
+				String resultado;
+				if (partidoPronostico.resultado(equipoPronostico) != ResultadoEnum.EMPATE) {
+					resultado = "Resultado: " + equipoPronostico.getNombre() + " "
+							+ partidoPronostico.resultado(equipoPronostico);
+				} else {
+					resultado = "Resultado: " + partidoPronostico.resultado(equipoPronostico);
+				}
+				System.out.println("Partido: " + equipoPronostico.getNombre() + " - "
+						+ partidoPronostico.getEquipo2().getNombre() + " | " + resultado);
 			}
 		}
+		System.out.println("\nResultados pronsoticos: \n");
+		for (int j = 0; j < participantes.length; j++) {
+			System.out.println("Participante " + participantes[j].getNombre() + ": " + contarPuntos()[j]);
+		}
+
 	}
+
 }
