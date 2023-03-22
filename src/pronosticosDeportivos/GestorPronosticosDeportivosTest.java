@@ -15,7 +15,6 @@ class GestorPronosticosDeportivosTest {
 
 	@Test
 	void testPuntajeRondasConsecutivas() {
-		
 		//Equipos
 		Equipo argentina = new Equipo("Argentina","Futbol");
 		Equipo arabiaSaudita = new Equipo("Arabia Saudita","Futbol");
