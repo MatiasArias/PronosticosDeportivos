@@ -4,6 +4,7 @@ public class Pronostico {
 	private Partido partido;
 	private Equipo equipo;
 	private ResultadoEnum resultado;
+	private Participante participante;
 	
 	public int puntos() {
 		if(partido.resultado(equipo)==resultado) {
@@ -41,6 +42,12 @@ public class Pronostico {
 
 	public void setResultado(ResultadoEnum resultado) {
 		this.resultado = resultado;
+	}
+	public Participante getParticipante() {
+		return participante;
+	}
+	public void setParticipante(Participante participante) {
+		this.participante = participante;
 	}
 	
 }
