@@ -26,7 +26,7 @@ cualquier momento.
 
 </p>
 
-### Entrega 1
+## Entrega 1
 A partir del esquema original propuesto, desarrollar un programa que lea un archivo de
 partidos y otro de resultados, el primero correspondiente a una ronda y el otro que contenga
 los pronósticos de una persona (Se considera una única ronda y un único participante en esta entrega). Cada ronda debe tener una cantidad fija de partidos, por
@@ -42,7 +42,7 @@ __Importante__
 Se debe considerar la forma de identificar los partidos de forma unívoca para su correcto
 procesamiento. Está permitido modificar la estructura del archivo si así lo considera.
 
-#### Ejemplo
+### Ejemplo
 
 Archivo **resultados.csv**
 
@@ -61,7 +61,7 @@ Archivo **pronosticos.csv**
 Leyendo los 2 (dos) archivos, y suponiendo que cada resultado acertado suma 1 (un) punto, la
 salida del programa debe ser: Puntaje = 1
 
-### Entrega 2
+## Entrega 2
 
 En esta entrega se debe poder soportar que los archivos contengan información de muchas
 rondas y de muchas personas (para eso hay que agregar los datos de ronda y persona en los
@@ -73,14 +73,14 @@ Al finalizar el programa, se debe imprimir un listado de los puntajes de cada pe
 participa.
 
 El programa debe:
-● Utilizar la herramienta Maven y su estructura de proyecto. La misma debe estar
+* Utilizar la herramienta Maven y su estructura de proyecto. La misma debe estar
 implementada en el repositorio de GIT escogido.
-● Imprimir por pantalla el nombre de cada persona, el puntaje total y la cantidad de
+* Imprimir por pantalla el nombre de cada persona, el puntaje total y la cantidad de
 pronósticos acertados.
-● Implementar un test (al menos uno, pero se recomienda hacer más) que calcule el
+* Implementar un test (al menos uno, pero se recomienda hacer más) que calcule el
 puntaje de una persona en 2 (dos) rondas consecutivas.
 
-#### Ejemplo
+### Ejemplo
 
 Archivo **resultados.csv**
 
